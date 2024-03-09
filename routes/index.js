@@ -1,16 +1,30 @@
 const express = require("express");
 const router = express.Router();
 const swagger = require("./swaggerRoutes.js");
-const contacts = require("./contactRoutes.js");
+
+// Import routes
+const usersRoutes = require("./usersRoutes");
+const accountTypeRoutes = require("./accountTypeRoutes");
+const categoryRoutes = require("./categoryRoutes");
+const genreRoutes = require("./genreRoutes");
+const mediaRoutes = require("./mediaRoutes");
 
 // Routes
+router.use("/users", usersRoutes);
+router.use("/accountType", accountTypeRoutes);
+router.use("/category", categoryRoutes);
+router.use("/genre", genreRoutes);
+router.use("/media", mediaRoutes);
 router.use("/api-docs", swagger);
-router.use("/contacts", contacts);
 
 // Error handling middleware
 router.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send("Something went wrong");
+  if (process.env.NODE_ENV === "development") {
+    res.status(500).send(err.stack);
+  } else {
+    res.status(500).send("Something went wrong");
+  }
 });
 
 module.exports = router;
