@@ -9,6 +9,10 @@ const accountTypeSchema = new mongoose.Schema({
   is_active: { type: Boolean, default: true },
 });
 
-const AccountType = mongoose.model("AccountType", accountTypeSchema);
+const AccountType = mongoose.model(
+  "accountType",
+  accountTypeSchema,
+  "accountType"
+);
 
 module.exports = AccountType;

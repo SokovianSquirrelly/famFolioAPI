@@ -10,6 +10,6 @@ const mediaSchema = new mongoose.Schema({
   genre_id: [{ type: mongoose.Schema.Types.ObjectId, ref: "Genre" }],
 });
 
-const Media = mongoose.model("Media", mediaSchema);
+const Media = mongoose.model("media", mediaSchema, "media");
 
 module.exports = Media;

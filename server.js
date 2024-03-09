@@ -1,11 +1,15 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const connectDatabase = require("./database/connection");
 
 const app = express();
 
 // Middleware to parse JSON bodies from incoming requests
 app.use(express.json());
+
+// Middleware for CORS
+app.use(cors());
 
 // Connect to database
 connectDatabase().then(() => {
@@ -18,6 +22,7 @@ connectDatabase().then(() => {
     res.status(500).send("Something went wrong");
   });
 
+  // Start the server
   app.listen(process.env.PORT || 8080, () => {
     console.log(`Server is running on port ${process.env.PORT || 8080} `);
     console.log(

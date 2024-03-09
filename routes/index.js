@@ -10,7 +10,7 @@ const genreRoutes = require("./genreRoutes");
 const mediaRoutes = require("./mediaRoutes");
 
 // Routes
-router.use("/users", userRoutes);
+router.use("/user", userRoutes);
 router.use("/accountType", accountTypeRoutes);
 router.use("/category", categoryRoutes);
 router.use("/genre", genreRoutes);
