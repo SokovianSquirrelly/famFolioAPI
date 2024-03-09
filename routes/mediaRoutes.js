@@ -12,28 +12,28 @@ router.get("/", utilities.handleErrors(mediaController.getAllMedia));
 // GET single media by id
 router.get(
   "/:id",
-  validate.validateId,
+  // validate.validateId,
   utilities.handleErrors(mediaController.getMediaById)
 );
 
 // POST new media
 router.post(
   "/",
-  validate.validateMedia,
+  // validate.validateMedia,
   utilities.handleErrors(mediaController.addMedia)
 );
 
 // PUT update media
 router.put(
   "/:id",
-  validate.validateUpdateMedia,
+  // validate.validateUpdateMedia,
   utilities.handleErrors(mediaController.updateMedia)
 );
 
 // DELETE media
 router.delete(
   "/:id",
-  validate.validateDeleteMedia,
+  // validate.validateDeleteMedia,
   utilities.handleErrors(mediaController.deleteMedia)
 );
 

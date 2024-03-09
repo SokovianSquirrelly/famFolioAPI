@@ -12,28 +12,28 @@ router.get("/", utilities.handleErrors(genreController.getAllGenres));
 // GET single genre by id
 router.get(
   "/:id",
-  validate.validateId,
+  // validate.validateId,
   utilities.handleErrors(genreController.getGenreById)
 );
 
 // POST new genre
 router.post(
   "/",
-  validate.validateGenre,
+  // validate.validateGenre,
   utilities.handleErrors(genreController.addGenre)
 );
 
 // PUT update genre
 router.put(
   "/:id",
-  validate.validateUpdateGenre,
+  // validate.validateUpdateGenre,
   utilities.handleErrors(genreController.updateGenre)
 );
 
 // DELETE genre
 router.delete(
   "/:id",
-  validate.validateDeleteGenre,
+  // validate.validateDeleteGenre,
   utilities.handleErrors(genreController.deleteGenre)
 );
 

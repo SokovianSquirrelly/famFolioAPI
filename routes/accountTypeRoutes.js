@@ -15,28 +15,28 @@ router.get(
 // GET single account type by id
 router.get(
   "/:id",
-  validate.validateId,
+  // validate.validateId,
   utilities.handleErrors(accountTypeController.getAccountTypeById)
 );
 
 // POST new account type
 router.post(
   "/",
-  validate.validateAccountType,
+  // validate.validateAccountType,
   utilities.handleErrors(accountTypeController.addAccountType)
 );
 
 // PUT update account type
 router.put(
   "/:id",
-  validate.validateUpdateAccountType,
+  // validate.validateUpdateAccountType,
   utilities.handleErrors(accountTypeController.updateAccountType)
 );
 
 // DELETE account type
 router.delete(
   "/:id",
-  validate.validateDeleteAccountType,
+  // validate.validateDeleteAccountType,
   utilities.handleErrors(accountTypeController.deleteAccountType)
 );
 

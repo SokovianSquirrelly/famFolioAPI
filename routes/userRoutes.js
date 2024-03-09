@@ -12,28 +12,28 @@ router.get("/", utilities.handleErrors(usersController.getAllUsers));
 // GET single user by id
 router.get(
   "/:id",
-  validate.validateId,
+  // validate.validateId,
   utilities.handleErrors(usersController.getUserById)
 );
 
 // POST new user
 router.post(
   "/",
-  validate.validateUser,
+  // validate.validateUser,
   utilities.handleErrors(usersController.addUser)
 );
 
 // PUT update user
 router.put(
   "/:id",
-  validate.validateUpdateUser,
+  // validate.validateUpdateUser,
   utilities.handleErrors(usersController.updateUser)
 );
 
 // DELETE user
 router.delete(
   "/:id",
-  validate.validateDeleteUser,
+  // validate.validateDeleteUser,
   utilities.handleErrors(usersController.deleteUser)
 );
 

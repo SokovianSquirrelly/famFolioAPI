@@ -12,28 +12,28 @@ router.get("/", utilities.handleErrors(categoryController.getAllCategories));
 // GET single category by id
 router.get(
   "/:id",
-  validate.validateId,
+  // validate.validateId,
   utilities.handleErrors(categoryController.getCategoryById)
 );
 
 // POST new category
 router.post(
   "/",
-  validate.validateCategory,
+  // validate.validateCategory,
   utilities.handleErrors(categoryController.addCategory)
 );
 
 // PUT update category
 router.put(
   "/:id",
-  validate.validateUpdateCategory,
+  // validate.validateUpdateCategory,
   utilities.handleErrors(categoryController.updateCategory)
 );
 
 // DELETE category
 router.delete(
   "/:id",
-  validate.validateDeleteCategory,
+  // validate.validateDeleteCategory,
   utilities.handleErrors(categoryController.deleteCategory)
 );
 

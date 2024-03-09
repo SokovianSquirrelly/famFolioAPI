@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const swagger = require("./swaggerRoutes.js");
+const swagger = require("./swaggerRoutes");
 
 // Import routes
-const usersRoutes = require("./usersRoutes");
+const userRoutes = require("./userRoutes");
 const accountTypeRoutes = require("./accountTypeRoutes");
 const categoryRoutes = require("./categoryRoutes");
 const genreRoutes = require("./genreRoutes");
 const mediaRoutes = require("./mediaRoutes");
 
 // Routes
-router.use("/users", usersRoutes);
+router.use("/users", userRoutes);
 router.use("/accountType", accountTypeRoutes);
 router.use("/category", categoryRoutes);
 router.use("/genre", genreRoutes);
