@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const { auth } = require("express-oauth2-jwt-bearer");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const userRoutes = require("./userRoutes");
 const accountTypeRoutes = require("./accountTypeRoutes");
 const categoryRoutes = require("./categoryRoutes");
 const genreRoutes = require("./genreRoutes");
 const mediaRoutes = require("./mediaRoutes");
+const swagger = require("./swaggerRoutes");
 
 // Authorization middleware. When used, the Access Token must
 // exist and be verified against the Auth0 JSON Web Key Set.
