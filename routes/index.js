@@ -14,8 +14,8 @@ const swagger = require("./swaggerRoutes");
 // Authorization middleware. When used, the Access Token must
 // exist and be verified against the Auth0 JSON Web Key Set.
 const checkJwt = auth({
-  audience: "{yourApiIdentifier}",
-  issuerBaseURL: `https://dev-ofqugjdj7o7861mc.us.auth0.com/`,
+  audience: process.env.AUDIENCE,
+  issuerBaseURL: process.env.ISSUER_BASE_URL,
 });
 
 // Routes
