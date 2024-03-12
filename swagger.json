@@ -5,10 +5,10 @@
     "description": "API documentation for CSE341",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://famfolioapi.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/user/": {
@@ -344,16 +344,6 @@
             "type": "string"
           }
         ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/api-docs/": {
-      "get": {
-        "description": "",
         "responses": {
           "default": {
             "description": ""

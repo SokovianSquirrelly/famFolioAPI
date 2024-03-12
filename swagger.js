@@ -5,8 +5,8 @@ const doc = {
     title: "famFolio Docs",
     description: "API documentation for CSE341",
   },
-  host: "localhost:8080",
-  schemes: ["http"], // Using "http" for local development
+  host: "https://famfolioapi.onrender.com",
+  schemes: ["https"], // Using "http" for local development
 };
 
 const outputFile = "./swagger.json";
