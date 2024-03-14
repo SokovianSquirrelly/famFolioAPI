@@ -1,4 +1,4 @@
-const UserInfo = require("../models/userInfo");
+const User = require("../models/userModel");
 const AccountType = require("../models/accountType");
 
 module.exports = async function checkUser(req, res, next) {
@@ -7,7 +7,7 @@ module.exports = async function checkUser(req, res, next) {
 
   try {
     // Check if the user exists in the database
-    let user = await UserInfo.findOne({ userId });
+    let user = await User.findOne({ userId });
 
     // If the user doesn't exist, add them to the database
     if (!user) {
@@ -16,7 +16,7 @@ module.exports = async function checkUser(req, res, next) {
       await accountType.save();
 
       // Create a new user with the user ID and account type ID
-      user = new UserInfo({ userId, accountTypeId: accountType._id });
+      user = new User({ userId, accountTypeId: accountType._id });
       await user.save();
     }
 
