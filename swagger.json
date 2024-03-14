@@ -5,7 +5,7 @@
     "description": "API documentation for CSE341",
     "version": "1.0.0"
   },
-  "host": "https://famfolioapi.onrender.com",
+  "host": "famfolioapi.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -344,6 +344,16 @@
             "type": "string"
           }
         ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api-docs/": {
+      "get": {
+        "description": "",
         "responses": {
           "default": {
             "description": ""
