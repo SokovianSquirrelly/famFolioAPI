@@ -1,9 +1,8 @@
 const User = require("../models/userModel");
-const AccountType = require("../models/accountType");
 
-module.exports = async function checkUser(req, res, next) {
+async function checkUser(req, res, next) {
   // Get the user ID from the token
-  const userId = req.user.sub;
+  const userId = req.auth.payload.sub;
 
   try {
     // Check if the user exists in the database
@@ -11,12 +10,8 @@ module.exports = async function checkUser(req, res, next) {
 
     // If the user doesn't exist, add them to the database
     if (!user) {
-      // Create a new account type for the user
-      const accountType = new AccountType({ type: "user" });
-      await accountType.save();
-
       // Create a new user with the user ID and account type ID
-      user = new User({ userId, accountTypeId: accountType._id });
+      user = new User({ userId, accountType: "user" });
       await user.save();
     }
 
@@ -29,4 +24,22 @@ module.exports = async function checkUser(req, res, next) {
     // If an error occurred, send a 500 response
     res.status(500).send("Server error");
   }
-};
+}
+
+function checkManager(req, res, next) {
+  if (req.user.accountType === "manager" || req.user.accountType === "admin") {
+    next();
+  } else {
+    res.status(403).send("Forbidden Access.");
+  }
+}
+
+function checkAdmin(req, res, next) {
+  if (req.user.accountType === "admin") {
+    next();
+  } else {
+    res.status(403).send("Forbidden Access.");
+  }
+}
+
+module.exports = { checkUser, checkManager, checkAdmin };
