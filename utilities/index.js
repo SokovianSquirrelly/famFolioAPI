@@ -11,6 +11,16 @@ utilities.handleValidationErrors = (req, res, next) => {
   next();
 };
 
+// generic use
+
+// router.use(function (err, req, res, next) {
+//   if (err.name === 'UnauthorizedError') {
+//       return res.status(401).send({ msg: 'Invalid token' });
+//   }
+
+//   next(err, req, res);
+// });
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for

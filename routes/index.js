@@ -10,6 +10,7 @@ const categoryRoutes = require("./categoryRoutes");
 const genreRoutes = require("./genreRoutes");
 const mediaRoutes = require("./mediaRoutes");
 const swagger = require("./swaggerRoutes");
+const { checkUser, checkManager } = require("../middleware/user");
 
 // Authorization middleware. When used, the Access Token must
 // exist and be verified against the Auth0 JSON Web Key Set.
@@ -19,11 +20,10 @@ const checkJwt = auth({
 });
 
 // Routes
-router.use("/user", checkJwt, userRoutes);
-router.use("/accountType", checkJwt, accountTypeRoutes);
-router.use("/category", checkJwt, categoryRoutes);
-router.use("/genre", checkJwt, genreRoutes);
-router.use("/media", checkJwt, mediaRoutes);
+router.use("/user", checkJwt, checkUser, checkManager, userRoutes);
+router.use("/category", checkJwt, checkUser, categoryRoutes);
+router.use("/genre", checkJwt, checkUser, genreRoutes);
+router.use("/media", checkJwt, checkUser, mediaRoutes);
 router.use("/api-docs", swagger);
 
 module.exports = router;
