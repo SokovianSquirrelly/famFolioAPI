@@ -5,7 +5,7 @@ const doc = {
     title: "famFolio Docs",
     description: "API documentation for CSE341",
   },
-  host: "https://famfolioapi.onrender.com",
+  host: "famfolioapi.onrender.com",
   schemes: ["https"], // Using "http" for local development
 };
 
