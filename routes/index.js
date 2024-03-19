@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const userRoutes = require("./userRoutes");
-const accountTypeRoutes = require("./accountTypeRoutes");
 const categoryRoutes = require("./categoryRoutes");
 const genreRoutes = require("./genreRoutes");
 const mediaRoutes = require("./mediaRoutes");
