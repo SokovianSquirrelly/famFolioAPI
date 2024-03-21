@@ -1,15 +1,15 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const { auth } = require("express-oauth2-jwt-bearer");
-const dotenv = require("dotenv");
+import { auth } from "express-oauth2-jwt-bearer";
+import dotenv from "dotenv";
 dotenv.config();
 
-const userRoutes = require("./userRoutes");
-const categoryRoutes = require("./categoryRoutes");
-const genreRoutes = require("./genreRoutes");
-const mediaRoutes = require("./mediaRoutes");
-const swagger = require("./swaggerRoutes");
-const { checkUser, checkManager } = require("../middleware/user");
+import UserRouter from "./userRoutes.js";
+import categoryRouter from "./categoryRoutes.js";
+import genreRouter from "./genreRoutes.js";
+import mediaRouter from "./mediaRoutes.js";
+import swagger from "./swaggerRoutes.js";
+import { checkUser, checkManager } from "../middleware/user.js";
 
 // Authorization middleware. When used, the Access Token must
 // exist and be verified against the Auth0 JSON Web Key Set.
@@ -19,10 +19,10 @@ const checkJwt = auth({
 });
 
 // Routes
-router.use("/user", checkJwt, checkUser, checkManager, userRoutes);
-router.use("/category", checkJwt, checkUser, categoryRoutes);
-router.use("/genre", checkJwt, checkUser, genreRoutes);
-router.use("/media", checkJwt, checkUser, mediaRoutes);
+router.use("/user", checkJwt, checkUser, checkManager, UserRouter);
+router.use("/category", checkJwt, checkUser, categoryRouter);
+router.use("/genre", checkJwt, checkUser, genreRouter);
+router.use("/media", checkJwt, checkUser, mediaRouter);
 router.use("/api-docs", swagger);
 
-module.exports = router;
+export default router;

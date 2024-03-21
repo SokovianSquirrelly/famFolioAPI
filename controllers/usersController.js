@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
-const User = require("../models/userModel");
-
+import mongoose from "mongoose";
+import User from "../models/userModel.js";
 const usersController = {};
 
 // GET all users
@@ -70,4 +69,4 @@ usersController.deleteUser = async (req, res) => {
   }
 };
 
-module.exports = usersController;
+export default usersController;

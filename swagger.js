@@ -1,4 +1,4 @@
-const swaggerAutogen = require("swagger-autogen")();
+import swaggerAutogen from "swagger-autogen";
 
 const doc = {
   info: {
@@ -12,4 +12,4 @@ const doc = {
 const outputFile = "./swagger.json";
 const routes = ["./routes/index.js"];
 
-swaggerAutogen(outputFile, routes, doc);
+swaggerAutogen()(outputFile, routes, doc);

@@ -1,6 +1,7 @@
-const router = require("express").Router();
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("../swagger.json");
+import express from "express";
+const router = express.Router();
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "../swagger.json" assert { type: "json" };
 
 if (process.env.NODE_ENV === "development") {
   swaggerDocument.host = "localhost:8080";
@@ -17,4 +18,4 @@ router.use((err, req, res, next) => {
   res.status(500).send("Something went wrong");
 });
 
-module.exports = router;
+export default router;

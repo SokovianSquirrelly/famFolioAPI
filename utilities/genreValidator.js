@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+import { body, param } from "express-validator";
 
 const genreValidator = {};
 
@@ -20,4 +20,4 @@ genreValidator.validateGenreIdForDelete = [
   param("id").notEmpty().withMessage("Genre ID is required"),
 ];
 
-module.exports = genreValidator;
+export default genreValidator;

@@ -1,40 +1,46 @@
-const express = require("express");
-const router = express.Router();
-const categoryController = require("../controllers/categoryController");
-const utilities = require("../utilities");
-const validate = require("../utilities/categoryValidator");
+import express from "express";
+const categoryRouter = express.Router();
+import categoryController from "../controllers/categoryController.js";
+import utilities from "../utilities/index.js";
+import validate from "../utilities/categoryValidator.js";
+import { checkAdmin } from "../middleware/user.js";
 
 // Routes
 
 // GET all categories
-router.get("/", utilities.handleErrors(categoryController.getAllCategories));
+categoryRouter.get(
+  "/",
+  utilities.handleErrors(categoryController.getAllCategories)
+);
 
 // GET single category by id
-router.get(
+categoryRouter.get(
   "/:id",
   // validate.validateId,
   utilities.handleErrors(categoryController.getCategoryById)
 );
 
 // POST new category
-router.post(
+categoryRouter.post(
   "/",
   // validate.validateCategory,
   utilities.handleErrors(categoryController.addCategory)
 );
 
 // PUT update category
-router.put(
+categoryRouter.put(
   "/:id",
+  checkAdmin,
   // validate.validateUpdateCategory,
   utilities.handleErrors(categoryController.updateCategory)
 );
 
 // DELETE category
-router.delete(
+categoryRouter.delete(
   "/:id",
+  checkAdmin,
   // validate.validateDeleteCategory,
   utilities.handleErrors(categoryController.deleteCategory)
 );
 
-module.exports = router;
+export default categoryRouter;

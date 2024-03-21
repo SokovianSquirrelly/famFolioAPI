@@ -1,40 +1,43 @@
-const express = require("express");
-const router = express.Router();
-const mediaController = require("../controllers/mediaController");
-const utilities = require("../utilities");
-const validate = require("../utilities/mediaValidator");
+import express from "express";
+const mediaRouter = express.Router();
+import mediaController from "../controllers/mediaController.js";
+import utilities from "../utilities/index.js";
+import validate from "../utilities/mediaValidator.js";
+import { checkAdmin } from "../middleware/user.js";
 
 // Routes
 
 // GET all media
-router.get("/", utilities.handleErrors(mediaController.getAllMedia));
+mediaRouter.get("/", utilities.handleErrors(mediaController.getAllMedia));
 
 // GET single media by id
-router.get(
+mediaRouter.get(
   "/:id",
   // validate.validateId,
   utilities.handleErrors(mediaController.getMediaById)
 );
 
 // POST new media
-router.post(
+mediaRouter.post(
   "/",
   // validate.validateMedia,
   utilities.handleErrors(mediaController.addMedia)
 );
 
 // PUT update media
-router.put(
+mediaRouter.put(
   "/:id",
+  checkAdmin,
   // validate.validateUpdateMedia,
   utilities.handleErrors(mediaController.updateMedia)
 );
 
 // DELETE media
-router.delete(
+mediaRouter.delete(
   "/:id",
+  checkAdmin,
   // validate.validateDeleteMedia,
   utilities.handleErrors(mediaController.deleteMedia)
 );
 
-module.exports = router;
+export default mediaRouter;

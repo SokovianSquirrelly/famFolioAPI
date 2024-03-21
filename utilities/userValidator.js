@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+import { body, param } from "express-validator";
 
 const userValidator = {};
 
@@ -33,4 +33,4 @@ userValidator.validateUserIdForDelete = [
   param("id").notEmpty().withMessage("User ID is required"),
 ];
 
-module.exports = userValidator;
+export default userValidator;

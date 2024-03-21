@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const genreSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -8,4 +8,4 @@ const genreSchema = new mongoose.Schema({
 
 const Genre = mongoose.model("genre", genreSchema, "genre");
 
-module.exports = Genre;
+export default Genre;
