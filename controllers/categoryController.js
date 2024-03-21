@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Category = require("../models/categoryModel");
+import mongoose from "mongoose";
+import Category from "../models/categoryModel";
 
 const categoryController = {};
 

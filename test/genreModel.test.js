@@ -1,5 +1,5 @@
-const chai = require("chai");
-const expect = chai.expect;
+import chai from "chai";
+const { expect } = chai;
 const mongoose = require("mongoose");
 const Genre = require("../models/genre"); // Assuming the model file is located at '../models/genre.js'
 
