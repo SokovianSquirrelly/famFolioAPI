@@ -3,6 +3,7 @@ const router = express.Router();
 const genreController = require("../controllers/genreController");
 const utilities = require("../utilities");
 const validate = require("../utilities/genreValidator");
+const { checkAdmin } = require("../middleware/user");
 
 // Routes
 

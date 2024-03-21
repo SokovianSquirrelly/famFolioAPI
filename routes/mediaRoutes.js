@@ -3,6 +3,7 @@ const router = express.Router();
 const mediaController = require("../controllers/mediaController");
 const utilities = require("../utilities");
 const validate = require("../utilities/mediaValidator");
+const { checkAdmin } = require("../middleware/user");
 
 // Routes
 
