@@ -26,6 +26,7 @@ router.post(
 // PUT update category
 router.put(
   "/:id",
+  checkAdmin,
   // validate.validateUpdateCategory,
   utilities.handleErrors(categoryController.updateCategory)
 );
@@ -33,6 +34,7 @@ router.put(
 // DELETE category
 router.delete(
   "/:id",
+  checkAdmin,
   // validate.validateDeleteCategory,
   utilities.handleErrors(categoryController.deleteCategory)
 );

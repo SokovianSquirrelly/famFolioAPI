@@ -3,6 +3,7 @@ const router = express.Router();
 const usersController = require("../controllers/usersController");
 const utilities = require("../utilities");
 const validate = require("../utilities/userValidator");
+const { checkAdmin } = require("../middleware/user");
 
 // Routes
 
@@ -26,13 +27,14 @@ router.post(
 // PUT update user
 router.put(
   "/:id",
-  // validate.validateUpdateUser,
+  checkAdmin,
   utilities.handleErrors(usersController.updateUser)
 );
 
 // DELETE user
 router.delete(
-  "/:id", 
+  "/:id",
+  checkAdmin,
   // validate.validateDeleteUser,
   utilities.handleErrors(usersController.deleteUser)
 );

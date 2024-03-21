@@ -26,6 +26,7 @@ router.post(
 // PUT update media
 router.put(
   "/:id",
+  checkAdmin,
   // validate.validateUpdateMedia,
   utilities.handleErrors(mediaController.updateMedia)
 );
@@ -33,6 +34,7 @@ router.put(
 // DELETE media
 router.delete(
   "/:id",
+  checkAdmin,
   // validate.validateDeleteMedia,
   utilities.handleErrors(mediaController.deleteMedia)
 );

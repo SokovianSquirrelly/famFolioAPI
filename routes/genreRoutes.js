@@ -26,6 +26,7 @@ router.post(
 // PUT update genre
 router.put(
   "/:id",
+  checkAdmin,
   // validate.validateUpdateGenre,
   utilities.handleErrors(genreController.updateGenre)
 );
@@ -33,6 +34,7 @@ router.put(
 // DELETE genre
 router.delete(
   "/:id",
+  checkAdmin,
   // validate.validateDeleteGenre,
   utilities.handleErrors(genreController.deleteGenre)
 );
