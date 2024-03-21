@@ -1,31 +1,31 @@
-const express = require("express");
-const router = express.Router();
-const genreController = require("../controllers/genreController");
-const utilities = require("../utilities");
-const validate = require("../utilities/genreValidator");
-const { checkAdmin } = require("../middleware/user");
+import express from "express";
+const genreRouter = express.Router();
+import genreController from "../controllers/genreController.js";
+import utilities from "../utilities/index.js";
+import validate from "../utilities/genreValidator.js";
+import { checkAdmin } from "../middleware/user.js";
 
 // Routes
 
 // GET all genres
-router.get("/", utilities.handleErrors(genreController.getAllGenres));
+genreRouter.get("/", utilities.handleErrors(genreController.getAllGenres));
 
 // GET single genre by id
-router.get(
+genreRouter.get(
   "/:id",
   // validate.validateId,
   utilities.handleErrors(genreController.getGenreById)
 );
 
 // POST new genre
-router.post(
+genreRouter.post(
   "/",
   // validate.validateGenre,
   utilities.handleErrors(genreController.addGenre)
 );
 
 // PUT update genre
-router.put(
+genreRouter.put(
   "/:id",
   checkAdmin,
   // validate.validateUpdateGenre,
@@ -33,11 +33,11 @@ router.put(
 );
 
 // DELETE genre
-router.delete(
+genreRouter.delete(
   "/:id",
   checkAdmin,
   // validate.validateDeleteGenre,
   utilities.handleErrors(genreController.deleteGenre)
 );
 
-module.exports = router;
+export default genreRouter;

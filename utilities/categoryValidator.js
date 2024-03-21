@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+import { body, param } from "express-validator";
 
 const categoryValidator = {};
 
@@ -20,4 +20,4 @@ categoryValidator.validateCategoryIdForDelete = [
   param("id").notEmpty().withMessage("Category ID is required"),
 ];
 
-module.exports = categoryValidator;
+export default categoryValidator;

@@ -1,4 +1,4 @@
-const User = require("../models/userModel");
+import User from "../models/userModel.js";
 
 async function checkUser(req, res, next) {
   // Get the user ID from the token
@@ -42,4 +42,4 @@ function checkAdmin(req, res, next) {
   }
 }
 
-module.exports = { checkUser, checkManager, checkAdmin };
+export { checkUser, checkManager, checkAdmin };

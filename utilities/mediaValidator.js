@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+import { body, param } from "express-validator";
 
 const mediaValidator = {};
 
@@ -22,4 +22,4 @@ mediaValidator.validateMediaIdForDelete = [
   param("id").notEmpty().withMessage("Media ID is required"),
 ];
 
-module.exports = mediaValidator;
+export default mediaValidator;

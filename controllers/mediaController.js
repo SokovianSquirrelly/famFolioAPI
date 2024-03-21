@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Media = require("../models/mediaModel");
+import mongoose from "mongoose";
+import Media from "../models/mediaModel.js";
 
 const mediaController = {};
 
@@ -70,4 +70,4 @@ mediaController.deleteMedia = async (req, res) => {
   }
 };
 
-module.exports = mediaController;
+export default mediaController;

@@ -1,7 +1,7 @@
 import chai from "chai";
 const { expect } = chai;
-const mongoose = require("mongoose");
-const Genre = require("../models/genre"); // Assuming the model file is located at '../models/genre.js'
+import mongoose from "mongoose";
+import Genre from "../models/genreModel.js";
 
 describe("Genre Model", () => {
   // SETUP

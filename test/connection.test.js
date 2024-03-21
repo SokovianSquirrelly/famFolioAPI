@@ -1,8 +1,8 @@
-const chai = require("chai");
-const expect = chai.expect;
-const sinon = require("sinon");
-const mongoose = require("mongoose");
-const connectDatabase = require("./connection"); // Assuming the connection file is located at './connection.js'
+import chai from "chai";
+const { expect } = chai;
+import sinon from "sinon";
+import mongoose from "mongoose";
+import connectDatabase from "./connection.js";
 
 describe("connectDatabase", () => {
   let connectStub;

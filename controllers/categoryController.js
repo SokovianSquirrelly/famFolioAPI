@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Category from "../models/categoryModel";
+import Category from "../models/categoryModel.js";
 
 const categoryController = {};
 
@@ -70,4 +70,4 @@ categoryController.deleteCategory = async (req, res) => {
   }
 };
 
-module.exports = categoryController;
+export default categoryController;

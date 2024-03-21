@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const mediaSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -12,4 +12,4 @@ const mediaSchema = new mongoose.Schema({
 
 const Media = mongoose.model("media", mediaSchema, "media");
 
-module.exports = Media;
+export default Media;

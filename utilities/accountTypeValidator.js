@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+import { body, param } from "express-validator";
 
 const accountTypeValidator = {};
 
@@ -20,4 +20,4 @@ accountTypeValidator.validateAccountTypeIdForDelete = [
   param("id").notEmpty().withMessage("Account Type ID is required"),
 ];
 
-module.exports = accountTypeValidator;
+export default accountTypeValidator;

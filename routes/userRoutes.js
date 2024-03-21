@@ -1,42 +1,42 @@
-const express = require("express");
-const router = express.Router();
-const usersController = require("../controllers/usersController");
-const utilities = require("../utilities");
-const validate = require("../utilities/userValidator");
-const { checkAdmin } = require("../middleware/user");
+import express from "express";
+const UserRouter = express.Router();
+import usersController from "../controllers/usersController.js";
+import utilities from "../utilities/index.js";
+import validate from "../utilities/userValidator.js";
+import { checkAdmin } from "../middleware/user.js";
 
 // Routes
 
 // GET all users
-router.get("/", utilities.handleErrors(usersController.getAllUsers));
+UserRouter.get("/", utilities.handleErrors(usersController.getAllUsers));
 
 // GET single user by id
-router.get(
+UserRouter.get(
   "/:id",
   // validate.validateId,
   utilities.handleErrors(usersController.getUserById)
 );
 
 // POST new user
-router.post(
+UserRouter.post(
   "/",
   // validate.validateUser,
   utilities.handleErrors(usersController.addUser)
 );
 
 // PUT update user
-router.put(
+UserRouter.put(
   "/:id",
   checkAdmin,
   utilities.handleErrors(usersController.updateUser)
 );
 
 // DELETE user
-router.delete(
+UserRouter.delete(
   "/:id",
   checkAdmin,
   // validate.validateDeleteUser,
   utilities.handleErrors(usersController.deleteUser)
 );
 
-module.exports = router;
+export default UserRouter;

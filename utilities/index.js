@@ -1,4 +1,4 @@
-const { validationResult } = require("express-validator");
+import { validationResult } from "express-validator";
 
 const utilities = {};
 
@@ -29,4 +29,4 @@ utilities.handleValidationErrors = (req, res, next) => {
 utilities.handleErrors = (fn) => (req, res, next) =>
   Promise.resolve(fn(req, res, next)).catch(next);
 
-module.exports = utilities;
+export default utilities;

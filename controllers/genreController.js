@@ -1,6 +1,5 @@
-const mongoose = require("mongoose");
-const Genre = require("../models/genreModel");
-
+import mongoose from "mongoose";
+import Genre from "../models/genreModel.js";
 const genreController = {};
 
 // GET all genres
@@ -70,4 +69,4 @@ genreController.deleteGenre = async (req, res) => {
   }
 };
 
-module.exports = genreController;
+export default genreController;

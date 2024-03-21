@@ -3,6 +3,7 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import connectDatabase from "./database/connection.js";
+import routes from "./routes/index.js";
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(cors());
 // Connect to database
 connectDatabase().then(() => {
   // Use routes
-  app.use(require("./routes"));
+  app.use(routes);
 
   // Error handling middleware
   app.use((err, req, res, next) => {

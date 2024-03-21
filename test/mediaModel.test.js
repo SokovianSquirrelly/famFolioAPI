@@ -1,7 +1,8 @@
 import chai from "chai";
 const { expect } = chai;
-const mongoose = require("mongoose");
-const Media = require("../models/media"); // Assuming the model file is located at '../models/media.js'
+import mongoose from "mongoose";
+import mongoose from "mongoose";
+import Media from "../models/mediaModel.js";
 
 describe("Media Model", () => {
   // SETUP
