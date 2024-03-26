@@ -18,17 +18,17 @@ const checkJwt = auth({
   issuerBaseURL: process.env.ISSUER_BASE_URL,
 });
 
-// // Routes
-// router.use("/user", checkJwt, checkUser, checkManager, UserRouter);
-// router.use("/category", checkJwt, checkUser, categoryRouter);
-// router.use("/genre", checkJwt, checkUser, genreRouter);
-// router.use("/media", checkJwt, checkUser, mediaRouter);
-// router.use("/api-docs", swagger);
 // Routes
-router.use("/user", UserRouter);
-router.use("/category", categoryRouter);
-router.use("/genre", genreRouter);
-router.use("/media", mediaRouter);
+router.use("/user", checkJwt, checkUser, checkManager, UserRouter);
+router.use("/category", checkJwt, checkUser, categoryRouter);
+router.use("/genre", checkJwt, checkUser, genreRouter);
+router.use("/media", checkJwt, checkUser, mediaRouter);
 router.use("/api-docs", swagger);
+// Routes
+// router.use("/user", UserRouter);
+// router.use("/category", categoryRouter);
+// router.use("/genre", genreRouter);
+// router.use("/media", mediaRouter);
+// router.use("/api-docs", swagger);
 
 export default router;
