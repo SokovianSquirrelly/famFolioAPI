@@ -15,16 +15,22 @@
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -41,8 +47,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -57,8 +66,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -73,76 +85,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/accountType/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/accountType/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "put": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -151,16 +98,22 @@
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -177,8 +130,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -193,8 +149,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -209,8 +168,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -219,16 +181,22 @@
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -245,8 +213,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -261,8 +232,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -277,8 +251,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -287,16 +264,22 @@
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -313,8 +296,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -329,8 +315,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -345,8 +334,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -355,8 +347,11 @@
       "get": {
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
