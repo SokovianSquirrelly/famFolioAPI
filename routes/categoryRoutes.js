@@ -43,4 +43,22 @@ categoryRouter.delete(
   utilities.handleErrors(categoryController.deleteCategory)
 );
 
+// POST bulk categories
+categoryRouter.post(
+  "/bulk",
+  utilities.handleErrors(categoryController.addBulkCategories)
+);
+
+// PUT bulk update categories
+categoryRouter.put(
+  "/bulk",
+  utilities.handleErrors(categoryController.updateBulkCategories)
+);
+
+// DELETE bulk categories
+categoryRouter.delete(
+  "/bulk",
+  utilities.handleErrors(categoryController.deleteBulkCategories)
+);
+
 export default categoryRouter;

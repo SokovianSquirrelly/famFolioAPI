@@ -70,4 +70,42 @@ categoryController.deleteCategory = async (req, res) => {
   }
 };
 
+// POST bulk categories
+categoryController.addBulkCategories = async (req, res) => {
+  try {
+    const newCategories = await Category.insertMany(req.body);
+    res.status(201).json(newCategories);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+// PUT bulk update categories
+categoryController.updateBulkCategories = async (req, res) => {
+  try {
+    const updatedCategories = req.body.map(async (category) => {
+      return await Category.findOneAndUpdate({ _id: category._id }, category, {
+        new: true,
+      });
+    });
+    const results = await Promise.all(updatedCategories);
+    res.json(results);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+// DELETE bulk categories
+categoryController.deleteBulkCategories = async (req, res) => {
+  try {
+    const deletedCategories = req.body.map(async (categoryId) => {
+      return Category.deleteOne({ _id: categoryId });
+    });
+    await Promise.all(deletedCategories);
+    res.json({ message: "Deleted categories" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 export default categoryController;

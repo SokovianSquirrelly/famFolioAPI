@@ -69,4 +69,42 @@ genreController.deleteGenre = async (req, res) => {
   }
 };
 
+// POST bulk genres
+genreController.addBulkGenres = async (req, res) => {
+  try {
+    const newGenres = await Genre.insertMany(req.body);
+    res.status(201).json(newGenres);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+// PUT bulk update genres
+genreController.updateBulkGenres = async (req, res) => {
+  try {
+    const updatedGenres = req.body.map(async (genre) => {
+      return await Genre.findOneAndUpdate({ _id: genre._id }, genre, {
+        new: true,
+      });
+    });
+    const results = await Promise.all(updatedGenres);
+    res.json(results);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
+// DELETE bulk genres
+genreController.deleteBulkGenres = async (req, res) => {
+  try {
+    const deletedGenres = req.body.map(async (genreId) => {
+      return await Genre.deleteOne({ _id: genreId });
+    });
+    await Promise.all(deletedGenres);
+    res.json({ message: "Deleted genres" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 export default genreController;

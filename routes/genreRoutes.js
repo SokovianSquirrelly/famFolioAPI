@@ -40,4 +40,22 @@ genreRouter.delete(
   utilities.handleErrors(genreController.deleteGenre)
 );
 
+// POST bulk genres
+genreRouter.post(
+  "/bulk",
+  utilities.handleErrors(genreController.addBulkGenres)
+);
+
+// PUT bulk update genres
+genreRouter.put(
+  "/bulk",
+  utilities.handleErrors(genreController.updateBulkGenres)
+);
+
+// DELETE bulk genres
+genreRouter.delete(
+  "/bulk",
+  utilities.handleErrors(genreController.deleteBulkGenres)
+);
+
 export default genreRouter;
