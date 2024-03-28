@@ -17,6 +17,12 @@ mediaRouter.get(
   utilities.handleErrors(mediaController.getMediaById)
 );
 
+// GET media by user id
+mediaRouter.get(
+  "/:userId",
+  utilities.handleErrors(mediaController.getMediaByUserId)
+);
+
 // POST new media
 mediaRouter.post(
   "/",
@@ -27,7 +33,6 @@ mediaRouter.post(
 // PUT update media
 mediaRouter.put(
   "/:id",
-  checkAdmin,
   // validate.validateUpdateMedia,
   utilities.handleErrors(mediaController.updateMedia)
 );
@@ -35,9 +40,23 @@ mediaRouter.put(
 // DELETE media
 mediaRouter.delete(
   "/:id",
-  checkAdmin,
   // validate.validateDeleteMedia,
   utilities.handleErrors(mediaController.deleteMedia)
+);
+
+// POST bulk media
+mediaRouter.post("/bulk", utilities.handleErrors(mediaController.addBulkMedia));
+
+// PUT bulk update media
+mediaRouter.put(
+  "/bulk",
+  utilities.handleErrors(mediaController.updateBulkMedia)
+);
+
+// DELETE bulk media
+mediaRouter.delete(
+  "/bulk",
+  utilities.handleErrors(mediaController.deleteBulkMedia)
 );
 
 export default mediaRouter;
