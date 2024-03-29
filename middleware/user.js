@@ -1,28 +1,32 @@
 import User from "../models/userModel.js";
+import Media from "../models/mediaModel.js";
+
+const baseUrl =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:8080"
+    : "https://famfolioapi.onrender.com";
 
 async function checkUser(req, res, next) {
-  // Get the user ID from the token
   const userId = req.auth.payload.sub;
 
   try {
-    // Check if the user exists in the database
     let user = await User.findOne({ userId });
 
-    // If the user doesn't exist, add them to the database
     if (!user) {
-      // Create a new user with the user ID and account type ID
       user = new User({ userId, accountType: "user" });
       await user.save();
     }
 
-    // Add the user to the request object
     req.user = user;
-
-    // Continue to the next middleware function
     next();
   } catch (error) {
-    // If an error occurred, send a 500 response
-    res.status(500).send("Server error");
+    const err = new Error("Server error");
+    err.status = 500;
+    err.type = `${baseUrl}/server-error`;
+    err.title = "Internal Server Error";
+    err.detail = "An unexpected error occurred";
+    err.instance = req.originalUrl;
+    next(err);
   }
 }
 
@@ -30,7 +34,13 @@ function checkManager(req, res, next) {
   if (req.user.accountType === "manager" || req.user.accountType === "admin") {
     next();
   } else {
-    res.status(403).send("Forbidden Access.");
+    const err = new Error("Forbidden access");
+    err.status = 403;
+    err.type = `${baseUrl}/forbidden`;
+    err.title = "Forbidden";
+    err.detail = "You do not have access to this resource";
+    err.instance = req.originalUrl;
+    next(err);
   }
 }
 
@@ -38,35 +48,50 @@ function checkAdmin(req, res, next) {
   if (req.user.accountType === "admin") {
     next();
   } else {
-    res.status(403).send("Forbidden Access.");
+    const err = new Error("Forbidden access");
+    err.status = 403;
+    err.type = `${baseUrl}/forbidden`;
+    err.title = "Forbidden";
+    err.detail = "You do not have access to this resource";
+    err.instance = req.originalUrl;
+    next(err);
   }
 }
 
-import Media from "../models/mediaModel.js";
-
 async function checkUserMediaAccess(req, res, next) {
   try {
-    // Get the media ID from the request parameters
     const mediaId = req.params.mediaId;
-
-    // Find the media by its ID
     const media = await Media.findById(mediaId);
 
-    // If the media doesn't exist, send a 404 response
     if (!media) {
-      return res.status(404).send("Media not found");
+      const err = new Error("Media not found");
+      err.status = 404;
+      err.type = `${baseUrl}/not-found`;
+      err.title = "Not Found";
+      err.detail = "The requested media does not exist";
+      err.instance = req.originalUrl;
+      return next(err);
     }
 
-    // If the user ID doesn't match the media's user ID, send a 403 response
     if (req.user.userId !== media.userId) {
-      return res.status(403).send("Forbidden access");
+      const err = new Error("Forbidden access");
+      err.status = 403;
+      err.type = `${baseUrl}/forbidden`;
+      err.title = "Forbidden";
+      err.detail = "You do not have access to this media";
+      err.instance = req.originalUrl;
+      return next(err);
     }
 
-    // If the user has access to the media, continue to the next middleware function
     next();
   } catch (error) {
-    // If an error occurred, send a 500 response
-    res.status(500).send("Server error");
+    const err = new Error("Server error");
+    err.status = 500;
+    err.type = `${baseUrl}/server-error`;
+    err.title = "Internal Server Error";
+    err.detail = "An unexpected error occurred";
+    err.instance = req.originalUrl;
+    next(err);
   }
 }
 
