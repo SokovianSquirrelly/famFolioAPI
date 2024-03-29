@@ -5,7 +5,7 @@ const handleErrors = (err, req, res, next) => {
 
   res.setHeader("Content-Type", "application/problem+json");
 
-  const problemJson = {
+  let problemJson = {
     type: err.type || "about:blank",
     title: err.title || "Internal Server Error",
     status: err.status,
@@ -16,6 +16,17 @@ const handleErrors = (err, req, res, next) => {
     post: err.post || null,
     errors: err.errors || null,
   };
+
+  // Specific handling for 401 Unauthorized error
+  if (err.status === 401) {
+    problemJson = {
+      ...problemJson,
+      type: "https://famfolioapi.onrender.com/unauthorized",
+      title: "Unauthorized",
+      detail:
+        "You do not have the necessary permissions to access this resource",
+    };
+  }
 
   res.status(err.status).json(problemJson);
 };
