@@ -12,8 +12,8 @@ const handleErrors = (err, req, res, next) => {
     detail: err.detail || "An unexpected error occurred",
     instance: req.originalUrl,
     // Additional fields
-    balance: err.balance || null,
-    accounts: err.accounts || null,
+    user: err.user || null,
+    post: err.post || null,
     errors: err.errors || null,
   };
 
