@@ -4,6 +4,7 @@ import express from "express";
 import cors from "cors";
 import connectDatabase from "./database/connection.js";
 import routes from "./routes/index.js";
+import handleErrors from "./middleware/errorMiddleware.js"; // Import the error handling middleware
 
 const app = express();
 
@@ -19,30 +20,7 @@ connectDatabase().then(() => {
   app.use(routes);
 
   // Error handling middleware
-  app.use((err, req, res, next) => {
-    if (!err.status) {
-      // If the error doesn't have a status, default to 500 (Internal Server Error)
-      err.status = 500;
-    }
-
-    // Set the content-type to application/problem+json
-    res.setHeader("Content-Type", "application/problem+json");
-
-    // Construct the problem object
-    const problemJson = {
-      type: "about:blank",
-      title: err.title || "Internal Server Error",
-      status: err.status,
-      detail: err.detail || "An unexpected error occurred",
-      instance: req.originalUrl,
-      // Additional RFC 9457 fields
-      correlationId: req.headers["correlation-id"] || null,
-      errors: err.errors || null,
-    };
-
-    // Send the response
-    res.status(err.status).json(problemJson);
-  });
+  app.use(handleErrors); // Use the imported error handling middleware
 
   // Start the server
   app.listen(process.env.PORT || 8080, () => {
