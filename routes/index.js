@@ -10,6 +10,7 @@ import genreRouter from "./genreRoutes.js";
 import mediaRouter from "./mediaRoutes.js";
 import swagger from "./swaggerRoutes.js";
 import { checkUser, checkManager } from "../middleware/user.js";
+import handleErrors from "../middleware/errorMiddleware.js";
 
 // Authorization middleware. When used, the Access Token must
 // exist and be verified against the Auth0 JSON Web Key Set.
@@ -24,5 +25,8 @@ router.use("/category", checkJwt, checkUser, categoryRouter);
 router.use("/genre", checkJwt, checkUser, genreRouter);
 router.use("/media", checkJwt, checkUser, mediaRouter);
 router.use("/api-docs", swagger);
+
+// Error handling middleware goes after the routes
+router.use(handleErrors);
 
 export default router;
