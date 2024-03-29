@@ -8,6 +8,19 @@ import { checkAdmin } from "../middleware/user.js";
 // Routes
 
 // GET all users
+/**
+ * @swagger
+ * /user/:
+ *   get:
+ *     description: Returns users
+ *     responses:
+ *       200:
+ *         description: successful operation
+ *         content:
+ *           application/problem+json:
+ *             schema:
+ *               type: object
+ */
 UserRouter.get("/", utilities.handleErrors(usersController.getAllUsers));
 
 // GET single user by id
