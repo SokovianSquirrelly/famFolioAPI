@@ -3,6 +3,7 @@
 		"title": "Learn HTML Forms",
 		"url": "https://www.youtube.com/watch?v=2O8pkybH6po&t=6s",
 		"description": "An educational video walking through basic HTML forms in 8 minutes.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -17,6 +18,7 @@
 		],
 		"url": "https://example.com/the_final_countdown",
 		"description": "A hit song by the band Europe.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -32,6 +34,7 @@
 		],
 		"url": "https://m.media-amazon.com/images/I/81nq+ewtkcL._SL1500_.jpg",
 		"description": "A science fiction novel by Frank Herbert.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -47,6 +50,7 @@
 		],
 		"url": "https://example.com/starry_night",
 		"description": "A famous painting by Vincent van Gogh.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -62,6 +66,7 @@
 		],
 		"url": "https://example.com/zelda_windwaker",
 		"description": "An action-adventure video game developed by Nintendo.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -77,6 +82,7 @@
 		],
 		"url": "https://example.com/lord_of_the_rings",
 		"description": "A fantasy epic based on J.R.R. Tolkien's novels.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -92,6 +98,7 @@
 		],
 		"url": "https://example.com/tetons_landscape",
 		"description": "A breathtaking photo of the Tetons mountain range.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
@@ -107,6 +114,7 @@
 		],
 		"url": "https://example.com/demo",
 		"description": "A breathtaking photo of the Tetons mountain range.",
+		"userId": "hheTK32w6XBNwAKciKepfjaVVWmn5stQ@clients",
 		"created_at": "2024-03-07T00:00:00.000Z",
 		"updated_at": "2024-03-07T00:00:00.000Z",
 		"genre_id": [
