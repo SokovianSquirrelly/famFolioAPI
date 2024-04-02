@@ -27,11 +27,9 @@ usersController.getUserById = async (req, res) => {
 
 // GET single user by user_id
 usersController.getUserByUserId = async (req, res) => {
+  const userId = req.auth.payload.sub;
   try {
-    if (req.user.userId !== req.params.userId) {
-      return res.status(403).json({ message: "Unauthorized" });
-    }
-    const user = await User.findOne({ userId: req.params.userId });
+    const user = await User.findOne({ userId: userId });
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }

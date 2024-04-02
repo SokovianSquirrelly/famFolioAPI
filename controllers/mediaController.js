@@ -29,7 +29,9 @@ mediaController.getMediaById = async (req, res) => {
 // GET media by user id
 mediaController.getMediaByUserId = async (req, res) => {
   try {
-    const medias = await Media.find({ user_id: req.params.userId });
+    const medias = await Media.find({ user_id: req.params.userId })
+      .populate("category_id") // populate categories
+      .populate("genre_id"); // populate genres
     res.json(medias);
   } catch (err) {
     res.status(500).json({ message: err.message });
