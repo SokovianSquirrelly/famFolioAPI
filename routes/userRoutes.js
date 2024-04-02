@@ -35,6 +35,26 @@ UserRouter.get(
   utilities.handleErrors(usersController.getUserById)
 );
 
+// GET single user by user_id
+UserRouter.get(
+  "/user/:userId",
+  checkManager,
+  utilities.handleErrors(usersController.getUserByUserId)
+);
+
+// GET single user by user_id
+usersController.getUserByUserId = async (req, res) => {
+  try {
+    const user = await User.findOne({ userId: req.params.userId });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 // POST new user
 UserRouter.post("/", utilities.handleErrors(usersController.addUser));
 
