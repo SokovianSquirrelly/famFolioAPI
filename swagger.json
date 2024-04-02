@@ -79,7 +79,7 @@
         }
       }
     },
-    "/user/user/{userId}": {
+    "/user/self/{userId}": {
       "get": {
         "description": "",
         "parameters": [
@@ -353,7 +353,7 @@
         }
       }
     },
-    "/media/user/{userId}": {
+    "/media/self/{userId}": {
       "get": {
         "description": "",
         "parameters": [
