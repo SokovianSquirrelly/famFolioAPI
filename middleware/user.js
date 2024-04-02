@@ -73,7 +73,7 @@ async function checkUserMediaAccess(req, res, next) {
       return next(err);
     }
 
-    if (req.user.userId !== media.userId) {
+    if (req.user.userId !== media.user_id.toString()) {
       const err = new Error("Forbidden access");
       err.status = 403;
       err.type = `${baseUrl}/forbidden`;

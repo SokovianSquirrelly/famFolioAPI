@@ -13,7 +13,7 @@ mediaController.getAllMedia = async (req, res) => {
   }
 };
 
-// GET media by id
+// GET media by object id
 mediaController.getMediaById = async (req, res) => {
   try {
     const media = await Media.findById(req.params.id);
@@ -38,7 +38,10 @@ mediaController.getMediaByUserId = async (req, res) => {
 
 // POST new media
 mediaController.addMedia = async (req, res) => {
-  const media = new Media(req.body);
+  const media = new Media({
+    ...req.body,
+    user_id: req.user.userId,
+  });
   try {
     const newMedia = await media.save();
     res.status(201).json(newMedia);

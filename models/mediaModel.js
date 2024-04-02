@@ -8,6 +8,11 @@ const mediaSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
   genre_id: [{ type: mongoose.Schema.Types.ObjectId, ref: "Genre" }],
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 const Media = mongoose.model("media", mediaSchema, "media");
