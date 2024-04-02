@@ -9,7 +9,7 @@ const mediaSchema = new mongoose.Schema({
   updated_at: { type: Date, default: Date.now },
   genre_id: [{ type: mongoose.Schema.Types.ObjectId, ref: "Genre" }],
   user_id: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: "User",
     required: true,
   },

@@ -7,50 +7,24 @@
   },
   "host": "famfolioapi.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "paths": {
     "/user/": {
       "get": {
-        "description": "Get a list of all users",
+        "description": "",
         "responses": {
-          "200": {
-            "description": "A list of users",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          },
           "default": {
-            "description": "An error occurred",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
+            "description": ""
           }
         }
       },
       "post": {
-        "description": "Create a new user",
-        "parameters": [
-          {
-            "name": "user",
-            "in": "body",
-            "description": "The user to create",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        ],
+        "description": "",
         "responses": {
-          "201": {
-            "description": "The user was created",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          },
           "default": {
-            "description": "An error occurred",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
+            "description": ""
           }
         }
       }
@@ -93,6 +67,24 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/user/{userId}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -361,7 +353,7 @@
         }
       }
     },
-    "/media/{userId}": {
+    "/media/user/{userId}": {
       "get": {
         "description": "",
         "parameters": [
@@ -414,68 +406,6 @@
           }
         }
       }
-    }
-  },
-
-  "components": {
-    "schemas": {
-      "ProblemDetail": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "example": "https://example.com/problems/bad-request"
-          },
-          "title": {
-            "type": "string",
-            "example": "Bad Request"
-          },
-          "status": {
-            "type": "integer",
-            "example": 400
-          },
-          "detail": {
-            "type": "string",
-            "example": "Invalid input"
-          },
-          "instance": {
-            "type": "string",
-            "example": "/some-endpoint"
-          }
-        }
-      }
-    }
-  },
-
-  "definitions": {
-    "User": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "The user's unique identifier"
-        },
-        "name": {
-          "type": "string",
-          "description": "The user's name"
-        }
-      },
-      "required": ["id", "name"]
-    },
-    "Error": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Error code"
-        },
-        "message": {
-          "type": "string",
-          "description": "Error message"
-        }
-      },
-      "required": ["code", "message"]
     }
   }
 }

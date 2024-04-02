@@ -88,7 +88,7 @@ mediaController.addBulkMedia = async (req, res) => {
   try {
     const mediasWithUserId = req.body.map((media) => ({
       ...media,
-      userId: req.user.userId,
+      user_id: req.user.userId, // changed from user_Id to user_id
     }));
     const newMedias = await Media.insertMany(mediasWithUserId);
     res.status(201).json(newMedias);
@@ -96,6 +96,7 @@ mediaController.addBulkMedia = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
+
 // PUT bulk update media
 mediaController.updateBulkMedia = async (req, res) => {
   try {
