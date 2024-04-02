@@ -1,0 +1,118 @@
+[
+	{
+		"title": "Learn HTML Forms",
+		"url": "https://www.youtube.com/watch?v=2O8pkybH6po&t=6s",
+		"description": "An educational video walking through basic HTML forms in 8 minutes.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d689",
+			"611cfec36f0489305896d690"
+		]
+	},
+	{
+		"title": "The Final Countdown",
+		"category_id": [
+			"611cfec36f0489305896d700"
+		],
+		"url": "https://example.com/the_final_countdown",
+		"description": "A hit song by the band Europe.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d691",
+			"611cfec36f0489305896d692"
+		],
+		"__v": 0
+	},
+	{
+		"title": "Dune",
+		"category_id": [
+			"611cfec36f0489305896d702"
+		],
+		"url": "https://m.media-amazon.com/images/I/81nq+ewtkcL._SL1500_.jpg",
+		"description": "A science fiction novel by Frank Herbert.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d695",
+			"611cfec36f0489305896d688"
+		],
+		"__v": 0
+	},
+	{
+		"title": "Starry Night",
+		"category_id": [
+			"611cfec36f0489305896d703"
+		],
+		"url": "https://example.com/starry_night",
+		"description": "A famous painting by Vincent van Gogh.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d696",
+			"611cfec36f0489305896d703"
+		],
+		"__v": 0
+	},
+	{
+		"title": "The Legend of Zelda: The Wind Waker",
+		"category_id": [
+			"611cfec36f0489305896d704"
+		],
+		"url": "https://example.com/zelda_windwaker",
+		"description": "An action-adventure video game developed by Nintendo.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d697",
+			"611cfec36f0489305896d688"
+		],
+		"__v": 0
+	},
+	{
+		"title": "Lord of the Rings",
+		"category_id": [
+			"611cfec36f0489305896d698"
+		],
+		"url": "https://example.com/lord_of_the_rings",
+		"description": "A fantasy epic based on J.R.R. Tolkien's novels.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d687",
+			"611cfec36f0489305896d688"
+		],
+		"__v": 0
+	},
+	{
+		"title": "Tetons Landscape",
+		"category_id": [
+			"611cfec36f0489305896d701"
+		],
+		"url": "https://example.com/tetons_landscape",
+		"description": "A breathtaking photo of the Tetons mountain range.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d693",
+			"611cfec36f0489305896d694"
+		],
+		"__v": 0
+	},
+	{
+		"title": "Demo Data",
+		"category_id": [
+			"611cfec36f0489305896d701"
+		],
+		"url": "https://example.com/demo",
+		"description": "A breathtaking photo of the Tetons mountain range.",
+		"created_at": "2024-03-07T00:00:00.000Z",
+		"updated_at": "2024-03-07T00:00:00.000Z",
+		"genre_id": [
+			"611cfec36f0489305896d693",
+			"611cfec36f0489305896d694"
+		],
+		"__v": 0
+	}
+]

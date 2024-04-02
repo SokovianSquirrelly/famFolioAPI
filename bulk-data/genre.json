@@ -1,0 +1,91 @@
+[
+	{
+		"name": "Adventure",
+		"description": "A genre featuring exciting and unusual experiences.",
+		"category_id": [
+			"611cfec36f0489305896d698",
+			"611cfec36f0489305896d704"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Landscape",
+		"description": "A genre of art depicting landscapes.",
+		"category_id": [
+			"611cfec36f0489305896d701"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Fantasy",
+		"description": "A genre involving imaginative or fanciful elements.",
+		"category_id": [
+			"611cfec36f0489305896d698"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Rock",
+		"description": "A genre of popular music that originated as 'rock and roll' in the United States.",
+		"category_id": [
+			"611cfec36f0489305896d700"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Programming",
+		"description": "A genre related to writing instructions for computers.",
+		"category_id": [
+			"611cfec36f0489305896d699"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Pop",
+		"description": "A genre of popular music that originated in its modern form during the mid-1950s.",
+		"category_id": [
+			"611cfec36f0489305896d700"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Post-Impressionism",
+		"description": "A genre of painting that rejected the naturalism of impressionism.",
+		"category_id": [
+			"611cfec36f0489305896d703"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Technology",
+		"description": "A genre related to the application of scientific knowledge for practical purposes.",
+		"category_id": [
+			"611cfec36f0489305896d699"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Science Fiction",
+		"description": "A genre of speculative fiction dealing with imaginative concepts.",
+		"category_id": [
+			"611cfec36f0489305896d702"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Nature",
+		"description": "A genre of art depicting nature and its features.",
+		"category_id": [
+			"611cfec36f0489305896d701"
+		],
+		"__v": 0
+	},
+	{
+		"name": "Action",
+		"description": "A genre of fiction, including films, that emphasizes physical activity.",
+		"category_id": [
+			"611cfec36f0489305896d704"
+		],
+		"__v": 0
+	}
+]
