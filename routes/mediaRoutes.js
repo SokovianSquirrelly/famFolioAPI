@@ -19,7 +19,7 @@ mediaRouter.get(
 
 // GET media by user id
 mediaRouter.get(
-  "/:userId",
+  "/user/:userId",
   utilities.handleErrors(mediaController.getMediaByUserId)
 );
 
