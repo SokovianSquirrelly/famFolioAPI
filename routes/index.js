@@ -20,7 +20,7 @@ const checkJwt = auth({
 });
 
 // Routes
-router.use("/user", checkJwt, checkUser, checkManager, UserRouter);
+router.use("/user", checkJwt, checkUser, UserRouter);
 router.use("/category", checkJwt, checkUser, categoryRouter);
 router.use("/genre", checkJwt, checkUser, genreRouter);
 router.use("/media", checkJwt, checkUser, mediaRouter);

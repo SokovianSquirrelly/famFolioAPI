@@ -3,7 +3,7 @@ const UserRouter = express.Router();
 import usersController from "../controllers/usersController.js";
 import utilities from "../utilities/index.js";
 import validate from "../utilities/userValidator.js";
-import { checkAdmin } from "../middleware/user.js";
+import { checkManager, checkAdmin } from "../middleware/user.js";
 
 // Routes
 
@@ -21,21 +21,22 @@ import { checkAdmin } from "../middleware/user.js";
  *             schema:
  *               type: object
  */
-UserRouter.get("/", utilities.handleErrors(usersController.getAllUsers));
+// GET all users
+UserRouter.get(
+  "/",
+  checkManager,
+  utilities.handleErrors(usersController.getAllUsers)
+);
 
 // GET single user by id
 UserRouter.get(
   "/:id",
-  // validate.validateId,
+  checkManager,
   utilities.handleErrors(usersController.getUserById)
 );
 
 // POST new user
-UserRouter.post(
-  "/",
-  // validate.validateUser,
-  utilities.handleErrors(usersController.addUser)
-);
+UserRouter.post("/", utilities.handleErrors(usersController.addUser));
 
 // PUT update user
 UserRouter.put(
@@ -48,7 +49,6 @@ UserRouter.put(
 UserRouter.delete(
   "/:id",
   checkAdmin,
-  // validate.validateDeleteUser,
   utilities.handleErrors(usersController.deleteUser)
 );
 
