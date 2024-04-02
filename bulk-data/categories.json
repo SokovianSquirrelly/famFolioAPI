@@ -1,0 +1,30 @@
+[
+	{
+		"name": "Art",
+		"description": "A diverse range of human activities involving creative expression."
+	},
+	{
+		"name": "Video Games",
+		"description": "An electronic game that involves interaction with a user interface to generate visual feedback."
+	},
+	{
+		"name": "Photos",
+		"description": "An image created by light falling on a photosensitive surface."
+	},
+	{
+		"name": "Videos",
+		"description": "A collection of various videos, including educational content, entertainment, tutorials, and more."
+	},
+	{
+		"name": "Music",
+		"description": "An art form consisting of sound and silence."
+	},
+	{
+		"name": "Movies",
+		"description": "A form of visual communication used to convey experiences, stories, and ideas."
+	},
+	{
+		"name": "Books",
+		"description": "A set of written, printed, or blank sheets bound together."
+	}
+]
