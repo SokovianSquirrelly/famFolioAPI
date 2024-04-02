@@ -11,6 +11,16 @@
     "https"
   ],
   "paths": {
+    "/user/self/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/user/": {
       "get": {
         "description": "",
@@ -79,17 +89,9 @@
         }
       }
     },
-    "/user/self/{userId}": {
-      "get": {
+    "/user/self": {
+      "delete": {
         "description": "",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "default": {
             "description": ""

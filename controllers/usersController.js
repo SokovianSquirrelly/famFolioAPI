@@ -82,5 +82,20 @@ usersController.deleteUser = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+// DELETE self
+usersController.deleteSelf = async (req, res) => {
+  const userId = req.auth.payload.sub;
+  try {
+    const user = await User.findOne({ userId: userId });
+    if (user) {
+      await User.deleteOne({ userId: userId });
+      res.json({ message: "Deleted user" });
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 export default usersController;

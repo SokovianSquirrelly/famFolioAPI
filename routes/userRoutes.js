@@ -7,20 +7,11 @@ import { checkManager, checkAdmin } from "../middleware/user.js";
 
 // Routes
 
-// GET all users
-/**
- * @swagger
- * /user/:
- *   get:
- *     description: Returns users
- *     responses:
- *       200:
- *         description: successful operation
- *         content:
- *           application/problem+json:
- *             schema:
- *               type: object
- */
+// GET single user
+UserRouter.get(
+  "/self/",
+  utilities.handleErrors(usersController.getUserByUserId)
+);
 // GET all users
 UserRouter.get(
   "/",
@@ -35,12 +26,6 @@ UserRouter.get(
   utilities.handleErrors(usersController.getUserById)
 );
 
-// GET single user by user_id
-UserRouter.get(
-  "/self/:userId",
-  utilities.handleErrors(usersController.getUserByUserId)
-);
-
 // POST new user
 UserRouter.post("/", utilities.handleErrors(usersController.addUser));
 
@@ -50,6 +35,9 @@ UserRouter.put(
   checkAdmin,
   utilities.handleErrors(usersController.updateUser)
 );
+
+// DELETE self
+UserRouter.delete("/self", utilities.handleErrors(usersController.deleteSelf));
 
 // DELETE user
 UserRouter.delete(
