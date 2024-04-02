@@ -86,13 +86,16 @@ mediaController.deleteMedia = async (req, res) => {
 // POST bulk media
 mediaController.addBulkMedia = async (req, res) => {
   try {
-    const newMedias = await Media.insertMany(req.body);
+    const mediasWithUserId = req.body.map((media) => ({
+      ...media,
+      userId: req.user.userId,
+    }));
+    const newMedias = await Media.insertMany(mediasWithUserId);
     res.status(201).json(newMedias);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
-
 // PUT bulk update media
 mediaController.updateBulkMedia = async (req, res) => {
   try {

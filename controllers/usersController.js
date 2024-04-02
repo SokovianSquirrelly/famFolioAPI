@@ -53,7 +53,7 @@ usersController.addUser = async (req, res) => {
 usersController.updateUser = async (req, res) => {
   try {
     const updatedUser = await User.findOneAndUpdate(
-      { _id: req.params.id },
+      { userId: req.params.userId },
       req.body,
       { new: true }
     );
@@ -70,9 +70,9 @@ usersController.updateUser = async (req, res) => {
 // DELETE user
 usersController.deleteUser = async (req, res) => {
   try {
-    const user = await User.findOne({ _id: req.params.id });
+    const user = await User.findOne({ userId: req.params.userId });
     if (user) {
-      await User.deleteOne({ _id: req.params.id });
+      await User.deleteOne({ userId: req.params.userId });
       res.json({ message: "Deleted user" });
     } else {
       res.status(404).json({ message: "User not found" });
