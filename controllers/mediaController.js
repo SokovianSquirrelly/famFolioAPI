@@ -66,7 +66,9 @@ mediaController.deleteMyMedia = async (req, res) => {
 // GET all media
 mediaController.getAllMedia = async (req, res) => {
   try {
-    const media = await Media.find();
+    const media = await Media.find()
+      .populate("category_id")
+      .populate("genre_id");
     res.json(media);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -76,7 +78,9 @@ mediaController.getAllMedia = async (req, res) => {
 // GET media by object id
 mediaController.getMediaById = async (req, res) => {
   try {
-    const media = await Media.findById(req.params.id);
+    const media = await Media.findById(req.params.id)
+      .populate("category_id")
+      .populate("genre_id");
     if (media == null) {
       return res.status(404).json({ message: "Cannot find media" });
     }
