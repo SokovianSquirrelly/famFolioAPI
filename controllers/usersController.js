@@ -82,7 +82,7 @@ usersController.deleteUser = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-// DELETE self
+// DELETE my
 usersController.deleteSelf = async (req, res) => {
   const userId = req.auth.payload.sub;
   try {

@@ -3,9 +3,27 @@ const mediaRouter = express.Router();
 import mediaController from "../controllers/mediaController.js";
 import utilities from "../utilities/index.js";
 import validate from "../utilities/mediaValidator.js";
-import { checkAdmin } from "../middleware/user.js";
+import { checkManager, checkAdmin } from "../middleware/user.js";
 
 // Routes
+
+// GET media by user id
+mediaRouter.get(
+  "/my/:userId",
+  utilities.handleErrors(mediaController.getMyMediaByUserId)
+);
+
+// PUT update 'my' media
+mediaRouter.put(
+  "/my/:userId",
+  utilities.handleErrors(mediaController.updateMyMediaByUserId)
+);
+
+// DELETE 'my' media
+mediaRouter.delete(
+  "/my/:userId",
+  utilities.handleErrors(mediaController.deleteMyMediaByUserId)
+);
 
 // GET all media
 mediaRouter.get("/", utilities.handleErrors(mediaController.getAllMedia));
@@ -17,45 +35,36 @@ mediaRouter.get(
   utilities.handleErrors(mediaController.getMediaById)
 );
 
-// GET media by user id
-mediaRouter.get(
-  "/self/:userId",
-  utilities.handleErrors(mediaController.getMediaByUserId)
-);
-
 // POST new media
-mediaRouter.post(
-  "/",
-  // validate.validateMedia,
-  utilities.handleErrors(mediaController.addMedia)
-);
+mediaRouter.post("/", utilities.handleErrors(mediaController.addMedia));
+// POST bulk media
+mediaRouter.post("/bulk", utilities.handleErrors(mediaController.addBulkMedia));
 
 // PUT update media
 mediaRouter.put(
   "/:id",
-  // validate.validateUpdateMedia,
+  checkAdmin,
   utilities.handleErrors(mediaController.updateMedia)
 );
 
 // DELETE media
 mediaRouter.delete(
   "/:id",
-  // validate.validateDeleteMedia,
+  checkAdmin,
   utilities.handleErrors(mediaController.deleteMedia)
 );
-
-// POST bulk media
-mediaRouter.post("/bulk", utilities.handleErrors(mediaController.addBulkMedia));
 
 // PUT bulk update media
 mediaRouter.put(
   "/bulk",
+  checkAdmin,
   utilities.handleErrors(mediaController.updateBulkMedia)
 );
 
 // DELETE bulk media
 mediaRouter.delete(
   "/bulk",
+  checkAdmin,
   utilities.handleErrors(mediaController.deleteBulkMedia)
 );
 

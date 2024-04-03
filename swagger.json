@@ -7,11 +7,9 @@
   },
   "host": "famfolioapi.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
-    "/user/self/": {
+    "/user/my/": {
       "get": {
         "description": "",
         "responses": {
@@ -89,7 +87,7 @@
         }
       }
     },
-    "/user/self": {
+    "/user/my": {
       "delete": {
         "description": "",
         "responses": {
@@ -355,7 +353,7 @@
         }
       }
     },
-    "/media/self/{userId}": {
+    "/media/my/{userId}": {
       "get": {
         "description": "",
         "parameters": [

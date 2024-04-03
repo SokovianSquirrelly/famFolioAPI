@@ -8,10 +8,7 @@ import { checkManager, checkAdmin } from "../middleware/user.js";
 // Routes
 
 // GET single user
-UserRouter.get(
-  "/self/",
-  utilities.handleErrors(usersController.getUserByUserId)
-);
+UserRouter.get("/my/", utilities.handleErrors(usersController.getUserByUserId));
 // GET all users
 UserRouter.get(
   "/",
@@ -36,8 +33,8 @@ UserRouter.put(
   utilities.handleErrors(usersController.updateUser)
 );
 
-// DELETE self
-UserRouter.delete("/self", utilities.handleErrors(usersController.deleteSelf));
+// DELETE my
+UserRouter.delete("/my", utilities.handleErrors(usersController.deleteSelf));
 
 // DELETE user
 UserRouter.delete(

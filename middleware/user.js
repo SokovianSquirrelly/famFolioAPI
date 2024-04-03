@@ -60,7 +60,7 @@ function checkAdmin(req, res, next) {
 
 async function checkUserMediaAccess(req, res, next) {
   try {
-    const mediaId = req.params.mediaId;
+    const mediaId = req.params.id; // Changed from req.params.mediaId to req.params.id
     const media = await Media.findById(mediaId);
 
     if (!media) {
