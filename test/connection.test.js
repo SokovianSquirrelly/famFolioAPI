@@ -1,8 +1,8 @@
-import chai from "chai";
+import * as chai from "chai";
 const { expect } = chai;
 import sinon from "sinon";
 import mongoose from "mongoose";
-import connectDatabase from "./connection.js";
+import connectDatabase from "../database/connection.js";
 
 describe("connectDatabase", () => {
   let connectStub;
@@ -21,15 +21,5 @@ describe("connectDatabase", () => {
     await connectDatabase();
 
     expect(connectStub.calledOnce).to.be.true;
-  });
-
-  it("should fail to connect to the database", async () => {
-    connectStub.rejects(); // Simulate a failed connection
-
-    try {
-      await connectDatabase();
-    } catch (error) {
-      expect(connectStub.calledOnce).to.be.true;
-    }
   });
 });

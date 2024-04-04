@@ -1,4 +1,4 @@
-import chai from "chai";
+import * as chai from "chai";
 const { expect } = chai;
 import mongoose from "mongoose";
 import Genre from "../models/genreModel.js";

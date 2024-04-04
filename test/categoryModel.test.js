@@ -1,7 +1,9 @@
-import chai from "chai";
+import * as chai from "chai";
 const { expect } = chai;
 import mongoose from "mongoose";
 import Category from "../models/categoryModel.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 describe("Category Model", () => {
   // SETUP

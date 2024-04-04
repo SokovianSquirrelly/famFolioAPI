@@ -24,6 +24,7 @@
     "express-validator": "^7.0.1",
     "mongodb": "^6.4.0",
     "mongoose": "^8.2.1",
+    "sinon": "^17.0.1",
     "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
